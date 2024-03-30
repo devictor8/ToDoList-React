@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    overflow-x: auto
+}
+
+.task-table {
+    border-collapse: collapse;
+    min-width: 90%;
+    margin: auto;
+}
+
+th {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+@media (max-width: 750px) {
+    .task-table {
+        min-width: 700px;
+    }
+}
