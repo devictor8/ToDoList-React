@@ -9,7 +9,7 @@ import EditInput from '../EditInput/EditInput';
 export default function TableRow({ task }) {
   const [isEditing, setIsEditing] = useState(false);
   const {
-    id, title, createdAt,
+    id, title, createdAt, status,
   } = task;
   const { updateTable } = useContext(TaskContext);
 
@@ -28,7 +28,7 @@ export default function TableRow({ task }) {
       <td>{!isEditing ? title : <EditInput task={task} handleEdit={handleEdit} setIsEditing={setIsEditing} />}</td>
       <td>{formatDate(createdAt)}</td>
       <td>
-        <select onChange={({ target }) => handleEdit({ ...task, status: target.value })}>
+        <select value={status} onChange={({ target }) => handleEdit({ ...task, status: target.value })}>
           <option value="pendente">pendente</option>
           <option value="em andamento">em andamento</option>
           <option value="conluída">concluída</option>
